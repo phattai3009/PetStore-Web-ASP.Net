@@ -1,0 +1,92 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.Main {
+	max-width: 1200px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    margin: auto;
+    margin-top:10px;
+    border:5px solid #de8ebe;
+
+}
+
+.Main hr{
+    margin-top: 0px;
+}
+
+.Main .title-background{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.Main .title{
+    color: red;
+	padding:5px;
+    text-transform: uppercase;
+}
+
+.Main .container{
+    margin: 0 40px;
+}
+
+.Main .xemtatca{
+    float:right;
+    font-size: 20px;
+    padding-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+	color:#333333;
+}
+
+.Main .sotrang{
+    width: 100%;
+    text-align: center;
+}
+
+
+/*For small screen*/
+@media only screen and (max-width: 550px) {
+    .Main h1{
+        font-size: 100%;
+    }
+    
+    .Main .xemtatca{
+        padding-top: 5px;
+        font-size: 70%;
+    }
+    
+}
+.tdSP {
+    width:190px;
+    height:300px;
+    text-align:center;
+    border:2px solid #ccc;
+    margin-left:5px;
+    margin-top:5px;
+    font-size:14px
+}
+.tdSP:hover {
+    border:1px solid red;
+    box-shadow:0px 5px 10px 10px #d7d7d7;
+    cursor:pointer;
+}
+
+.btnmain  {
+    width:200px;
+    height:30px;
+    margin:0px auto;
+    border: 2px solid #de8ebe;
+    outline:none;
+    background:none;
+    border-radius:20px;
+    transition:0.25s;
+    text-align:center;
+    cursor:pointer;
+    font-size:14px;
+}
+.btnmain:hover {
+    background-color: #de8ebe;
+    color:white;
+}

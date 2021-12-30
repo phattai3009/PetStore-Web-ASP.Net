@@ -1,0 +1,264 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="icon" href="../images/logo/petshop.ico"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
+    <link href="../css/DangNhap_Ki.css" rel="stylesheet" type="text/css" />
+    <link href="../css/Header.css" rel="stylesheet" type="text/css" />
+    <link href="../css/Menu.css" rel="stylesheet" type="text/css" />
+    <link href="../css/Main.css" rel="stylesheet" type="text/css" />
+    <link href="../css/Footer.css" rel="stylesheet" type="text/css" />
+    <link href="../css/SlideShow.css" rel="stylesheet" type="text/css"/>
+    <style>
+    * {
+	    box-sizing:border-box;
+	    -moz-box-sizing:border-box;
+	    -webkit-box-sizing:border-box;	
+    }
+
+    body {
+	    margin:0;
+        padding: 0;
+        font-family:'Poppins','Times New Roman';
+        font-size:17px;
+    }
+
+    html {
+ 	scroll-behavior: smooth;
+    }
+     
+    html, body { 
+        cursor:url('http://www.snazzyspace.com/cursorsfolder/dog-paw.png'), auto; 
+    }
+    
+    #Bam_len_top {
+	    display:none;
+	    position:fixed;
+	    bottom:50px;
+	    right:10px;
+	    z-index:99;
+	    font-size:20px;
+	    border:none;
+	    outline:none;
+	    background-color:#de8ebe;
+	    cursor:pointer;
+	    padding:15px;
+	    border-radius:20px;
+    }
+
+    #Trang_gio_hang {
+	    display:none;
+	    position:fixed;
+	    right:8px;
+	    bottom:110px;
+	    z-index:99;
+	    font-size:18px;
+	    border:none;
+	    background-color:#de8ebe;
+	    cursor:pointer;
+	    padding:15px;
+	    border-radius:50%;
+	    outline:none;
+    }
+
+    .clear{
+        clear: both;
+    }
+
+    </style>
+    <script>
+        jQuery(document).ready(function () {
+            jQuery('.user-support').click(function (event) {
+                jQuery('.social-button-content').slideToggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <script src="../js/Scroll_on_Top.js"></script>
+    <button onclick="Dua_len_dau()" id="Bam_len_top" title="Lên đầu trang"><i class="fa fa-arrow-up"></i></button>
+    <button onClick="window.location='GioHang.aspx'" id="Trang_gio_hang"><i class="fa fa-shopping-cart"></i></button>
+    <form id="form1" runat="server">
+    <div>
+        <div class="Top_dau">
+            <div class="container">
+                
+                <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="container">
+                <div class="header-logo">
+                    <a class="logo" href="../Page/IndexLogined.aspx">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logo.png"/>
+                    </a>
+                </div>
+                <div class="Timkiem">
+                    <asp:TextBox ID="txtSearch" runat="server" TextMode="Search" placeholder="Tìm kiếm" ValidationGroup="search" Width="500px" Height="45px"></asp:TextBox>
+                </div>
+                    <asp:ImageButton ID="btSearch" runat="server" ImageUrl="~/images/search.JPG" ValidationGroup="search" height= "45px" width="45px" style="margin-top:30px"/>
+                <div class="Giohang" style="float:right">
+                    <asp:ImageButton ID="btnGioHang" runat="server" ImageUrl="~/images/icon/shopping-cart.png" ValidationGroup="GioHang" height= "45px" width="45px" OnClick="btnGioHang_Click" style="margin-top:8px"/>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div class="Menu-list">
+            <div class="container">
+                <ul style="margin-top:0;margin-bottom:0">
+                    <li class="Menu"><a href="../Page/IndexLogined.aspx">Trang chủ</a></li>
+                    <li class="Menu"><a href="../PageChinhSach/GioiThieu.aspx">Giới thiệu</a></li>
+                    <li class="Menu">
+                        <a href="../Page/Cho.aspx">Chó<i class="fa fa-angle-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../Page/ChoHusky.aspx">Husky</a>
+                            <a href="../Page/ChoCorgi.aspx">Corgi</a>
+                            <a href="../Page/ChoGolden.aspx">Golden</a>
+                        </div>
+                    </li>
+                    <li class="Menu">
+                        <a href="../Page/Meo.aspx">Mèo<i class="fa fa-angle-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../Page/MeoBritishSH.aspx">British short hair</a>
+                            <a href="../Page/MeoBritishLH.aspx">British long hair</a>
+                        </div>
+                    </li>
+                    <li class="Menu">
+                        <a href="../Page/ThuCungKhac.aspx">Thú Cưng<i class="fa fa-angle-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="Menu-sub">
+                                <a href="../Page/Chim.aspx">Chim <i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown-sub">
+                                </div>
+                            </div>
+                            <div class="Menu-sub">
+                                <a href="../Page/Ca.aspx">Cá <i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown-sub">
+
+                                </div>
+                            </div>
+                            <div class="Menu-sub">
+                                <a href="../Page/Hamster.aspx">Hamster <i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown-sub">
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="Menu"><a href="#tcgiamgia">Khuyến mãi</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div class="Slide-Container">
+	        <div class="slide fade"><img src="../images/SlideShow/329.jpg" style="vertical-align:middle"></div>
+            <div class="slide fade"><img src="../images/SlideShow/330.jpg" style="vertical-align:middle"></div>
+            <div class="slide fade"><img src="../images/SlideShow/banner_49ae49a2.png" style="vertical-align:middle"></div>
+            <div class="slide fade"><img src="../images/SlideShow/363.jpg" style="vertical-align:middle"></div>
+            <div class="slide fade"><img src="../images/SlideShow/pet1.png" style="vertical-align:middle"></div>
+            <div class="slide fade"><img src="../images/SlideShow/repet6-1.jpg" style="vertical-align:middle"></div>
+            <div style="text-align:center">
+    	        <span class="dot" onClick="currentSlide(0)"></span>
+                <span class="dot" onClick="currentSlide(1)"></span>
+                <span class="dot" onClick="currentSlide(2)"></span>
+                <span class="dot" onClick="currentSlide(3)"></span>
+                <span class="dot" onClick="currentSlide(4)"></span>
+                <span class="dot" onClick="currentSlide(5)"></span>
+            </div>
+            <script>
+                var slideIndex; //slideIndex đại diện cho mỗi slide (Vd: Hình 1 là slideindex=0 ....)
+                function showSlides() {
+                    var i;
+                    var slides = document.getElementsByClassName("slide");
+                    var dots = document.getElementsByClassName("dot");
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex].style.display = "block";
+                    dots[slideIndex].className += " active";
+                    slideIndex++; //Chuyển silde kế tiếp
+                    if (slideIndex > slides.length - 1) {	//Nếu slide cuối
+                        slideIndex = 0;			//Chuyển về slide đầu
+                    }
+                    setTimeout(showSlides, 10000);	//Lệnh tự động chuyển đồi sau 10s
+                }
+                showSlides(slideIndex = 0);
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+	        </script>
+        </div>
+        <div class="clear"></div>
+
+        <div class="Main">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            
+            </asp:ContentPlaceHolder>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <hr style="border:1.5px solid #e6e6e6;margin-bottom:0">
+
+        <div class="Footer">
+            <div class="container">
+                <div class="cot">
+                    <p>Danh mục</p>
+                    <ul>
+                        <li><a href="../Page/IndexLogined.aspx">Trang chủ</a></li>
+                        <li><a href="../Page/Cho.aspx">Shop cho chó</a></li>
+                        <li><a href="../Page/Meo.aspx">Shop cho mèo</a></li>
+                        <li><a href="../Page/ThuCungKhac.aspx">Shop vật nuôi khác</a></li>
+                    </ul>
+                </div>
+                <div class="cot">
+                    <p>Thông tin</p>
+                    <ul>
+                        <li><a href="../PageChinhSach/GioiThieu.aspx">Giới thiệu</a></li>
+                    </ul>
+                </div>
+                <div class="cot">
+                    <p>Chính sách</p>
+                    <ul>
+                        <li><a href="../PageChinhSach/ChinhSachGiaoHang.aspx">Chính sách giao hàng</a></li>
+                        <li><a href="../PageChinhSach/PhuongThucThanhToan.aspx">Phương thức thanh toán</a></li>
+                        <li><a href="../PageChinhSach/ChinhSachBaoHanh.aspx">Chính sách bảo hành</a></li>
+                        <li><a href="../PageChinhSach/ChinhSachDoiTra.aspx">Chính sách đổi, trả hàng</a></li>
+                        <li><a href="../PageChinhSach/DieuKhoanSuDung.aspx">Điều khoản sử dụng</a></li>
+                    </ul>
+                </div>
+                <div class="cot">
+                    <p>Liên hệ</p>
+                    <ul>
+                        <li class="social-network">
+                            <a href="https://www.facebook.com/"></a>
+                            <a href="https://www.instagram.com/"></a>
+                            <a href="https://www.twitter.com/"></a>
+                            <a href="https://www.youtube.com/"></a>
+                        </li>
+                        <li style="padding-top:7px"><a href="#">SĐT: 035xxxxxxx</a></li>
+                        <li><a href="mailto:dinhphattai.12a8.2019@gmail.com">Email: dinhphattai.12a8.2019@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

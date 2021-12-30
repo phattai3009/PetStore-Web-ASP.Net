@@ -1,0 +1,64 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.menu {
+    height: 100%;
+    width: 250px;
+    background-color: #818181;
+	position: fixed;
+	left: 0;
+	top:0;
+}
+
+.menu a {
+    padding: 20px 8px 20px 16px;
+    text-decoration: none;
+    font-size: 23px;
+    color: #030303;
+    display: block;
+}
+
+.menu a:hover {
+    background-color: #de8ebe;
+    color:white;
+}
+
+.menu img{
+    width: 100%;
+}
+
+.menu .current{
+    color: white;
+    border:5px groove #de8ebe;
+}
+
+.admin-logo {
+	margin-left: 250px;
+	height: 113px;
+	text-align: right;
+}
+
+.main{
+	margin-left: 250px;
+	padding-bottom: 30px;
+}
+
+/*For small screen*/
+@media screen and (max-width: 600px) {
+    .menu {
+        width: 0;
+        position: fixed;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+    
+    .menu-content {
+        position: relative;
+        top: 15%;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu a:hover{
+        color: #f1f1f1;
+    }
+}
